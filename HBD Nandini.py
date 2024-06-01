@@ -1,4 +1,10 @@
 import turtle
+from pygame import mixer
+
+mixer.init()
+mixer.music.load("HappyBirthday.mp3")
+mixer.music.play()
+
 happy=turtle.Screen()
 happy.bgcolor("black")
 turtle=turtle.Turtle()
@@ -7,6 +13,7 @@ turtle.color("yellow")
 turtle.width(7)
 colors=["peru","ivory","dark orange","coral","cyan","hot pink","gold","ivory","yellow","red","pink","green","blue","light blue","light green",]
 import time
+
 time.sleep(5)
 def draw_happy(i,x,y):
     turtle.pencolor("linen")
@@ -47,24 +54,6 @@ def cake(x, y):
     turtle.rt(90)
     turtle.fd(y)
 
-def heart():
-    for i in range(43):
-        turtle.pencolor(colors[i%9])
-        turtle.rt(5)
-        turtle.fd(5)
-    turtle.pencolor("red")
-    turtle.fd(150)
-    turtle.penup()
-    turtle.rt(140)
-    turtle.fd(147)
-    turtle.pendown()
-    for i in range(43):
-        turtle.pencolor(colors[i%9])
-        turtle.lt(5)
-        turtle.fd(5)
-    turtle.pencolor("red")
-    turtle.lt(7)
-    turtle.fd(151)
 def move(x,y):
    turtle.up()
    turtle.setposition(0,0)
@@ -74,6 +63,7 @@ def move(x,y):
    turtle.lt(90)
    turtle.fd(y)
    turtle.pendown()
+
 def mov(x,y):
    turtle.up()
    turtle.setposition(0,0)
@@ -83,6 +73,7 @@ def mov(x,y):
    turtle.rt(90)
    turtle.fd(y)
    turtle.pendown()
+
 def A(size):
   turtle.rt(19)
   turtle.forward(size)
@@ -91,6 +82,7 @@ def A(size):
   turtle.backward(size/2)
   turtle.rt(105)
   turtle.fd(int(size/3))
+
 def B(size):
    turtle.forward(size)
    turtle.rt(90)
@@ -100,6 +92,7 @@ def B(size):
    for i in range(18):
       turtle.rt(size//5)
       turtle.backward(size//20)
+
 def D(size):
    turtle.fd(size)
    turtle.rt(90)
@@ -107,6 +100,7 @@ def D(size):
    for i in range(13):
       turtle.rt(13)
       turtle.fd(size//8)
+
 def H(size):
    turtle.fd(size)
    turtle.backward(size//2)
@@ -115,10 +109,12 @@ def H(size):
    turtle.lt(90)
    turtle.fd(size//2)
    turtle.backward(size)
+
 def I(size):
    turtle.fd(size)
    turtle.rt(90)
    turtle.circle(size//8)
+
 def N(size):
     turtle.fd(size)
     turtle.rt(150)
@@ -132,6 +128,7 @@ def P(size):
    for i in range(8):
        turtle.rt(20)
        turtle.fd(size//9)
+
 def R():
    turtle.fd(60)
    turtle.rt(90)
@@ -141,11 +138,13 @@ def R():
       turtle.fd(3)
    turtle.lt(120)
    turtle.fd(40)
+
 def T(size):
    turtle.fd(size)
    turtle.rt(90)
    turtle.fd(size//2)
    turtle.backward(size//2)
+   
 def Y(size):
    turtle.fd(size)
    turtle.left(60)
@@ -154,8 +153,10 @@ def Y(size):
    turtle.rt(90)
    turtle.fd(size//1.5)
 turtle.speed(19)
+
 from turtle import *
 from random import randint
+
 def Spiral():
     x=1
     turtle.speed(0)
@@ -164,6 +165,7 @@ def Spiral():
       turtle.fd(10+x)
       turtle.rt(90.991)
       x=x+1
+
 def triangle(size):
 	turtle.color(colors[5%3])
 	turtle.begin_fill()
@@ -172,19 +174,22 @@ def triangle(size):
 			turtle.left(120)
 			turtle.fd(size)
 	turtle.end_fill()
+    
 def triflow():
     for i in range(12):
         triangle(140)
         turtle.left(30)
         turtle.fd(10)
         triangle(151)
+
 def spiral():
 	for i in range(60):
 		turtle.pencolor(colors[i%5])
 		turtle.circle(2*i)
 		turtle.circle(-2*i)
 		turtle.left(i)
-def draw_leaf(leaf):       #cretes leaf function
+        
+def draw_leaf(leaf):       
       for i in range(0,2):
             leaf.forward(90)
             leaf.right(40+i)
@@ -192,6 +197,7 @@ def draw_leaf(leaf):       #cretes leaf function
                   leaf.right(3)
                   leaf.forward(5)
             leaf.right(145)
+
 def draw_flower(pen):
     for i in range(0,8):
         pen.color(colors[i%8])
@@ -199,6 +205,7 @@ def draw_flower(pen):
         draw_leaf(pen)
         pen.end_fill()
         pen.right(10)
+
 turtle.width(1)
 mov(480,240)
 Spiral()
@@ -207,10 +214,6 @@ Spiral()
 #section of Ballons
 move(180,307)
 mov(0,0)
-#ballon(-460, 200)
-#ballon(490, 200)
-#ballon(183,-80)
-#ballon(-133,-80)
 turtle.width(5)
 mov(-450,-250)
 draw_flower(turtle)
@@ -218,8 +221,8 @@ mov(450,-250)
 draw_flower(turtle)
 mov(-30,-120)
 turtle.width(13)
-#heart()
 #end Section of ballons
+
 #Name section
 turtle.speed(7)
 turtle.width(12)
@@ -238,6 +241,7 @@ mov(-90, 205)
 N(65)
 mov(-160,205)
 I(65)
+
 #Cake maker section
 turtle.shape('turtle')
 mov(120,-190)
@@ -260,6 +264,7 @@ turtle.width(11)
 turtle.pencolor("red")
 turtle.circle(7)
 #end Of Cake Section
+
 #happybithday
 turtle.pencolor("cyan")
 turtle.width(13)
